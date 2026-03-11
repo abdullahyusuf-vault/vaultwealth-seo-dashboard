@@ -2,7 +2,7 @@ name: Update SEO Dashboard
 
 on:
   schedule:
-    - cron: '0 6 * * *'   # Every day at 6:00 AM UTC (10:00 AM UAE time)
+    - cron: '0 5 * * *'   # Every day at 6:00 AM UTC (10:00 AM UAE time)
   workflow_dispatch:        # Also allows manual trigger from GitHub UI
 
 jobs:
