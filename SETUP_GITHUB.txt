@@ -1,0 +1,79 @@
+────────────────────────────────────────────────────
+  VaultWealth SEO Dashboard — GitHub Pages Setup
+────────────────────────────────────────────────────
+
+This gives you a permanent public URL that auto-updates every morning.
+Setup takes about 10 minutes.
+
+
+STEP 1 — CREATE A GITHUB ACCOUNT (if you don't have one)
+  Go to: https://github.com/signup
+
+
+STEP 2 — CREATE A NEW REPOSITORY
+  1. Go to: https://github.com/new
+  2. Repository name: vaultwealth-seo-dashboard
+  3. Set visibility to: Private  (recommended — keeps your SEO data private)
+  4. Click "Create repository"
+
+
+STEP 3 — UPLOAD YOUR FILES
+  1. On your new repository page, click "uploading an existing file"
+  2. Drag and drop ALL files from your seo-dashboard folder:
+       - fetch_seo_data.py
+       - index.html
+       - seo_dashboard.html  (if it exists yet — optional for first run)
+       - requirements.txt
+       - The .github folder (drag the whole folder)
+  3. Click "Commit changes"
+
+
+STEP 4 — ADD YOUR GOOGLE CREDENTIALS AS A SECRET
+  Your credentials.json file must be stored as a GitHub Secret so it's
+  never exposed publicly.
+
+  1. Open your credentials.json file in a text editor and copy ALL the contents
+  2. Go to your repository → Settings → Secrets and variables → Actions
+  3. Click "New repository secret"
+  4. Name:  GSC_CREDENTIALS
+  5. Value: paste the full contents of credentials.json
+  6. Click "Add secret"
+
+
+STEP 5 — ENABLE GITHUB PAGES
+  1. Go to your repository → Settings → Pages
+  2. Under "Source", select: Deploy from a branch
+  3. Branch: main  /  Folder: / (root)
+  4. Click Save
+  5. Wait 1-2 minutes — GitHub will show your live URL:
+       https://YOUR-USERNAME.github.io/vaultwealth-seo-dashboard/
+
+
+STEP 6 — RUN THE WORKFLOW MANUALLY (FIRST TIME)
+  1. Go to your repository → Actions tab
+  2. Click "Update SEO Dashboard" in the left sidebar
+  3. Click "Run workflow" → "Run workflow"
+  4. Wait ~1 minute for it to complete
+  5. Refresh your GitHub Pages URL — you'll see today's dashboard!
+
+
+SCHEDULE
+  The dashboard refreshes automatically every day at 10:00 AM UAE time.
+  You can also trigger it manually anytime from the Actions tab.
+
+
+YOUR PERMANENT LINK
+  https://YOUR-USERNAME.github.io/vaultwealth-seo-dashboard/
+  Share this with your team — it always shows the latest data.
+
+
+TROUBLESHOOTING
+  "No properties found" error in Actions log:
+  → Make sure the service account email is added in Google Search Console
+  → Settings → Users and permissions → Add user (Full permission)
+
+  Workflow fails with "Permission denied":
+  → Go to Settings → Actions → General → Workflow permissions
+  → Select "Read and write permissions" → Save
+
+────────────────────────────────────────────────────
